@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+	background-color: hsla(0, 0%, 0%, .3);
+}
+
+h1 {
+    font-size: 48px;
+}
+
+.container,
+.container-correct,
+.container-wrong {
+    margin: 0 auto;
+    max-width: 325px;
+    text-align: center;
+    border-radius: 0.25rem;
+    box-shadow: 0px 3px 6px 1px hsla(0, 0%, 0%, .5);
+	background-color: white;
+}
+
+.container-correct {
+    border-bottom: 15px solid green;
+}
+
+.container-wrong {
+    border-bottom: 15px solid red;
+}
+
+.question-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.question-digit {
+    margin: 0.5rem;
+    padding: 1rem;
+}
+
+.question-operator {
+    margin: 0.5rem;
+    padding-top: 1rem;
+}
+
+.answer-container {
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.alert-container {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.label-container {
+    margin-bottom: 1rem;
+}
+
+.label {
+    font-size: 24px;
+}
+
+.button,
+.label {
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+.button,
+.input {
+    border: 1px solid gray;
+    border-radius: 0.25rem;
+}
+
+.button {
+    font-size: 24px;
+	background-color: hsla(0, 0%, 0%, .2);
+}
+
+.button:hover {
+    cursor: pointer;
+	background-color: hsla(0,0%,0%,.4);
+	
+}
+
+.input {
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    padding: 0.5rem;
+    font-size: 24px;
+    max-width: 85px;
+}
+
+.alert {
+    display: none;
+}
+
+.correct-show,
+.wrong-show {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid transparent;
+    border-radius: 2rem;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    width: 4rem;
+}
+
+.correct-show {
+    background-color: green;
+}
+
+.wrong-show {
+    background-color: red;
+}
+
+.streak-container, .streak-container-gold, .streak-container-diamond {
+	display: flex;
+	justify-content: center;
+	font-size: 24px;
+	margin-top: 1.5rem;
+	padding: 1rem;
+}
+
+.streak-container-gold {
+	background-color: hsl(55, 85%, 50%);
+	border: 10px solid hsl(55, 85%, 45%);
+	border-radius: 0.25rem;
+}
+
+.streak-container-diamond {
+	background-color: hsl(180, 90%, 50%);
+	border: 10px solid hsl(180, 90%, 45%);
+	border-radius: 0.25rem;
+}
+
+.app-container {
+	margin-top: 1rem;
+}

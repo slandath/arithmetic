@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Arithmetic Game</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="app-container" id="app-container">
+            <label for="app-option" class="label">Operation</label>
+            <select name="app-option" id="appOption" class="input">
+                <option value="multiply">x</option>
+                <option value="divide">&#x00f7</option>
+            </select>
+        </div>
+    </div>
+    <div class="container" id="container">
+        <div class="question-container">
+            <h1 class="question-digit" id="digit1"></h1>
+            <h1 class="question-operator" id="operator"></h1>
+            <h1 class="question-digit" id="digit2"></h1>
+        </div>
+        <div class="answer-container">
+            <div class="label-container">
+                <label for="answer" class="label">Answer</label>
+            </div>
+            <div class="input-container">
+                <input type="number" id="answer" class="input" min="0" max="999" />
+                <input type="button" id="checkAnswer" class="button" value="Check" />
+            </div>
+            <br />
+        </div>
+        <div class="alert-container">
+            <p class="alert" id="alert"></p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="streak-container" id="streak-container">
+            <p class="streak">Current Streak =&nbsp</p>
+            <p class="streak" id="streak"></p>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
