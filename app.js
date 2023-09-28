@@ -1,10 +1,9 @@
 const answer = document.querySelector('#answer');
 const digit1 = document.querySelector('#digit1');
 const digit2 = document.querySelector('#digit2');
-const alertText = document.querySelector('#alert');
-const alertContainer = document.querySelector('#container');
 const streak = document.querySelector('#streak');
-const streakContainer = document.querySelector('#streak-container');
+const streakTitle = document.querySelector('#streakTitle');
+const streakContainer = document.querySelector('#streakContainer');
 const appOption = document.querySelector('#appOption');
 const operator = document.querySelector('#operator');
 
@@ -57,51 +56,37 @@ function verify() {
   switch (true) {
     case appOption.value === 'multiply':
       if (+answer.value === firstDigit * secondDigit) {
-        alertText.className = 'correct-show';
-        alertText.innerText = '\u2713';
-        alertContainer.className = 'container-correct';
         streakCounter += 1;
-        if (streakCounter > 24) {
-          streakContainer.className = 'streak-container-diamond';
-        } else if (streakCounter > 9 && streakCounter < 25) {
-          streakContainer.className = 'streak-container-gold';
-        } else {
-          streakContainer.className = 'streak-container';
-        }
-        streak.innerText = streakCounter;
-        setTimeout(newNumbers, 3000);
+        streakContainer.className =
+          'box has-text-centered has-background-success';
+        streakTitle.innerText = 'Answer';
+        streak.innerText = '\u2714';
       } else {
-        alertText.className = 'wrong-show';
-        alertText.innerText = 'X';
-        alertContainer.className = 'container-wrong';
         streakCounter = 0;
-        streak.innerText = streakCounter;
-        streakContainer.className = 'streak-container';
+        streakContainer.className =
+          'box has-text-centered has-background-danger';
+        streakTitle.innerText = 'Answer';
+        streak.innerText = '\u2716';
       }
+      setTimeout(newNumbers, 2000);
+      setTimeout(resetStreakContainer, 2000);
       break;
     case appOption.value === 'divide':
       if (+answer.value === thirdDigit / secondDigit) {
-        alertText.className = 'correct-show';
-        alertText.innerText = '\u2713';
-        alertContainer.className = 'container-correct';
         streakCounter += 1;
-        if (streakCounter > 24) {
-          streakContainer.className = 'streak-container-diamond';
-        } else if (streakCounter > 9 && streakCounter < 25) {
-          streakContainer.className = 'streak-container-gold';
-        } else {
-          streakContainer.className = 'streak-container';
-        }
+        streakContainer.className =
+          'box has-text-centered has-background-success';
+        streakTitle.innerText = 'Answer';
         streak.innerText = streakCounter;
-        setTimeout(newNumbers, 3000);
       } else {
-        alertText.className = 'wrong-show';
-        alertText.innerText = 'X';
-        alertContainer.className = 'container-wrong';
         streakCounter = 0;
+        streakContainer.className =
+          'box has-text-centered has-background-danger';
+        streakTitle.innerText = 'Answer';
         streak.innerText = streakCounter;
-        streakContainer.className = 'streak-container';
       }
+      setTimeout(newNumbers, 2000);
+      setTimeout(resetStreakContainer, 2000);
       break;
     default:
   }
@@ -109,14 +94,16 @@ function verify() {
 
 function newNumbers() {
   if (appOption.value === 'multiply') {
-    alertText.className = 'alert';
-    alertContainer.className = 'container';
     multiply();
   } else {
-    alertText.className = 'alert';
-    alertContainer.className = 'container';
     divide();
   }
+}
+
+function resetStreakContainer() {
+  streakContainer.className = 'box has-text-centered';
+  streakTitle.innerText = 'Streak';
+  streak.innerText = streakCounter;
 }
 
 multiply();
