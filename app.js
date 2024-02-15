@@ -77,13 +77,13 @@ function verify() {
         streakContainer.className =
           'box has-text-centered has-background-success';
         streakTitle.innerText = 'Answer';
-        streak.innerText = streakCounter;
+        streak.innerText = '\u2714';
       } else {
         streakCounter = 0;
         streakContainer.className =
           'box has-text-centered has-background-danger';
         streakTitle.innerText = 'Answer';
-        streak.innerText = streakCounter;
+        streak.innerText = '\u2716';
       }
       setTimeout(newNumbers, 2000);
       setTimeout(resetStreakContainer, 2000);
