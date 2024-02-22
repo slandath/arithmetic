@@ -10,57 +10,55 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-narrow-tablet is-narrow-desktop is-10-mobile is-offset-1-mobile">
-        <div class="box has-text-centered">
-          <label for="appOption" class="label">Operation</label>
-          <div class="select is-rounded">
-            <select name="app-option" id="appOption" class="select">
-              <option value="multiply">x</option>
-              <option value="divide">&#x00f7;</option>
-            </select>
-          </div>
-        </div>
+  <div class="column is-one-third-tablet is-one-quarter-desktop mx-auto">
+    <div class="box has-text-centered">
+      <label for="appOption" class="label">Operation</label>
+      <div class="select is-large">
+        <select name="app-option" id="appOption" class="select">
+          <option value="multiply">x</option>
+          <option value="divide">&#x00f7;</option>
+        </select>
       </div>
+    </div>
+  </div>
 
-      <div class="column is-narrow-tablet is-narrow-desktop is-10-mobile is-offset-1-mobile">
-        <div class="box has-background-info-dark has-text-info-light has-text-centered ">
-          <div class="columns is-mobile ">
-            <p class="column is-size-1" id="digit1"></p>
-            <p class="column is-size-1" id="operator"></p>
-            <p class="column is-size-1" id="digit2"></p>
-          </div>
-        </div>
-        <div class="box">
-          <h1 class="is-size-4 has-text-centered mb-2">Answer</h1>
-          <div class="field has-addons is-horizontal">
-            <div class="control is-expanded">
-              <input type="number" class="input" id="answer" min="0" max="999" />
-            </div>
-            <div class="control">
-              <button type="button" class="button is-primary" id="checkAnswer">
-                Check
-              </button>
-            </div>
-          </div>
-        </div>
+  <div class="column is-one-third-tablet is-one-quarter-desktop mx-auto">
+    <div class="box has-background-info-dark has-text-info-light has-text-centered ">
+      <div class="columns is-mobile">
+        <p class="column is-size-1" id="digit1"></p>
+        <p class="column is-size-1" id="operator"></p>
+        <p class="column is-size-1" id="digit2"></p>
       </div>
-
-      <div class="column is-narrow-tablet is-narrow-desktop is-10-mobile is-offset-1-mobile">
-        <div class="box has-text-centered" id="streakContainer">
-          <div class="columns is-mobile">
-            <div class="column">
-              <h1 class="is-size-3" id="streakTitle">Streak</h1>
-            </div>
-            <div class="column">
-              <p class="is-size-3" id="streak"></p>
-            </div>
-          </div>
+    </div>
+    <div class="box">
+      <h1 class="is-size-4 has-text-centered mb-2">Answer</h1>
+      <div class="field has-addons is-horizontal">
+        <div class="control is-expanded">
+          <input type="number" class="input" id="answer" min="0" max="999" />
+        </div>
+        <div class="control">
+          <button type="button" class="button is-primary" id="checkAnswer">
+            Check
+          </button>
         </div>
       </div>
     </div>
-    <script src="app.js"></script>
+  </div>
+
+  <div class="column is-one-third-tablet is-one-quarter-desktop mx-auto">
+    <div class="box has-text-centered" id="streakContainer">
+      <div class="columns is-mobile">
+        <div class="column">
+          <h1 class="is-size-3" id="streakTitle">Streak</h1>
+        </div>
+        <div class="column">
+          <p class="is-size-3" id="streak"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="app.js"></script>
 </body>
 
 </html>
