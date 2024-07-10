@@ -1,64 +1,18 @@
-<!DOCTYPE html>
-<html lang="en" class="has-background-grey-light mt-4">
+<!doctype html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
-  <link rel="icon" href="./images/maths.png" />
-  <title>Arithmetic Exercise</title>
+  <link rel="icon" type="image/png"
+    href="https://raw.githubusercontent.com/slandath/images/main/arithmetic/maths.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arithmetic Game</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
 </head>
 
 <body>
-  <div class="column is-one-third-tablet is-one-quarter-desktop mx-auto">
-    <div class="box has-text-centered">
-      <label for="appOption" class="label">Operation</label>
-      <div class="select is-large">
-        <select name="app-option" id="appOption" class="select">
-          <option value="multiply">x</option>
-          <option value="divide">&#x00f7;</option>
-        </select>
-      </div>
-    </div>
-  </div>
-
-  <div class="column is-one-third-tablet is-one-quarter-desktop mx-auto">
-    <div class="box has-background-info-dark has-text-info-light has-text-centered ">
-      <div class="columns is-mobile">
-        <p class="column is-size-1" id="digit1"></p>
-        <p class="column is-size-1" id="operator"></p>
-        <p class="column is-size-1" id="digit2"></p>
-      </div>
-    </div>
-    <div class="box">
-      <h1 class="is-size-4 has-text-centered mb-2">Answer</h1>
-      <div class="field has-addons is-horizontal">
-        <div class="control is-expanded">
-          <input type="number" class="input" id="answer" min="0" max="999" />
-        </div>
-        <div class="control">
-          <button type="button" class="button is-primary" id="checkAnswer">
-            Check
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="column is-one-third-tablet is-one-quarter-desktop mx-auto">
-    <div class="box has-text-centered" id="streakContainer">
-      <div class="columns is-mobile">
-        <div class="column">
-          <h1 class="is-size-3" id="streakTitle">Streak</h1>
-        </div>
-        <div class="column">
-          <p class="is-size-3" id="streak"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-  <script src="app.js"></script>
+  <div id="app"></div>
+  <script type="module" src="/main.js"></script>
 </body>
 
 </html>
