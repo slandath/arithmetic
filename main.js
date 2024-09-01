@@ -7,51 +7,50 @@ document.querySelector('#app').innerHTML = `
     <div class="is-flex is-justify-content-center">
         <button class="button is-size-5 is-info px-6" id="startBtn">Start</button>
     </div>
+
+    <div class="section">
+        <div class="card has-background-grey-darker mb-4">
+            <div class="card-content">
+                <div class="content">
+                    <p id="problem" class="is-size-2 has-text-centered"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="field mb-4">
+            <label class="label is-size-4">Guess</label>
+            <div class="control">
+                <input id="guess" class="input" type="text" placeholder="What's the answer?">
+            </div>
+        </div>
+
+        <div class="field is-grouped is-justify-content-center mb-4">
+            <div class="control">
+                <button class="button is-warning" id="answerBtn">Check</button>
+            </div>
+        </div>
+
+        <div id="answerContainer" class="card has-background-grey-darker mb-4">
+            <div class="card-content">
+                <div class="content">
+                    <label class="label is-size-4">Answer</label>
+                    <p id="answerText" class="is-size-2 has-text-centered"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="has-text-centered mb-4">
+            <label class="label is-size-4">Score</label>
+        </div>
+        <div class="card has-background-grey-darker">
+            <div class="card-content">
+                <div class="content">
+                    <p id="streak" class="is-size-2 has-text-centered">0</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-<div class="section">
-    <div class="card has-background-grey-darker">
-        <div class="card-content">
-            <div class="content">
-                <p id="problem" class="is-size-2 has-text-centered"></p>
-            </div>
-        </div>
-    </div>
-
-    <div class="columns">
-        <div class="column">
-            <div class="field">
-                <label class="label is-size-4">Guess</label>
-                <div class="control">
-                    <input id="guess" class="input" type="text" placeholder="What's the answer?">
-                </div>
-            </div>
-
-            <div class="field is-grouped">
-                <div class="control">
-                    <button class="button is-warning" id="answerBtn">Check</button>
-                </div>
-            </div>
-        </div>
-        <div class="column">
-            <label class="label is-size-4">Answer</label>
-            <div id="answerContainer" class="card has-background-grey-darker">
-                <div class="card-content">
-                    <div class="content">
-                        <p id="answerText" class="is-size-2 has-text-centered"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <label class="label is-size-4 has-text-centered">Score</label>
-    <div class="card has-background-grey-darker">
-        <div class="card-content">
-            <div class="content">
-                <p id="streak" class="is-size-2 has-text-centered">0</p>
-            </div>
-        </div>
-    </div>
 `;
 /*
   Game object is global and contains the state for the game.  Currently not being saved locally, so game will reset on page refresh.
@@ -97,6 +96,9 @@ startBtn.addEventListener('click', function () {
 });
 
 answerBtn.addEventListener('click', function () {
+  if (!uncheckedGuess.value) {
+    return
+  } else
   logGuess(+uncheckedGuess.value);
   const success = validate(game.answers, game.guesses);
   resolver(success);
