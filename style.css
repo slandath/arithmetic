@@ -10,14 +10,95 @@ body {
   text-align: center;
 }
 
-input {
-  padding: 1rem;
-  margin: 0.5rem 0;
-  text-align: center;
-  font-size: 1.5rem;
-  max-width: 8rem;
+.answer-container p {
+  max-width: 4rem;
+  margin: 0 auto;
+  font-size: 1.25rem;
   border: 1px solid transparent;
   border-radius: 0.25rem;
+  background-color: white;
+  color: hsla(0, 0%, 0%, 1);
+}
+
+.answer-text-container {
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  background-color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 2rem;
+  min-width: 4rem;
+  min-height: 2rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.btn-check {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  height: 3rem;
+  width: 13rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  border: 2px solid transparent;
+  background-color: hsla(200, 100%, 50%, 1);
+  box-shadow: 1px 1px 25px 5px hsla(200, 100%, 50%, 1);
+}
+
+.btn-check:active {
+  transform: translateY(4px);
+  box-shadow: 0px 0px 10px 2px hsla(200, 100%, 50%, 1);
+}
+
+.btn-check:hover {
+  cursor: pointer;
+  background-color: hsla(200, 100%, 50%, 0.75);
+  box-shadow: 0px 0px 10px 2px hsla(200, 100%, 50%, 1);
+}
+
+.btn-is-correct {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  height: 3rem;
+  width: 13rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid transparent;
+  background-color: hsla(100, 100%, 50%, 1);
+  box-shadow: 0px 0px 10px 2px hsla(100, 100%, 50%, 1);
+}
+
+.btn-is-wrong {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  height: 3rem;
+  width: 13rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid transparent;
+  background-color: hsla(0, 100%, 50%, 1);
+  box-shadow: 0px 0px 10px 2px hsla(0, 100%, 50%, 1);
+}
+
+.btn-start {
+  padding: 0.5rem;
+  height: 3rem;
+  width: 8rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid transparent;
+  background-color: hsla(60, 100%, 50%, 0.25);
+}
+
+.btn-start:active {
+  transform: translateY(4px);
+  box-shadow: 0px 0px 10px 2px hsla(60, 100%, 50%, 1);
+}
+
+.btn-start:hover {
+  cursor: pointer;
+  background-color: hsla(60, 100%, 50%, 1);
+  box-shadow: 1px 1px 25px 5px hsla(60, 100%, 50%, 1);
 }
 
 .container {
@@ -30,47 +111,24 @@ input {
   max-width: 400px;
 }
 
-.answerBtn {
-  margin: 1rem 0;
-  padding: 0.5rem;
-  height: 3rem;
-  width: 6rem;
-  font-size: 1rem;
-  border-radius: 0.25rem;
+.guess-container input {
+  padding: 1rem;
+  margin: 0.5rem 0;
+  text-align: center;
+  font-size: 1.5rem;
+  max-width: 4rem;
+  min-height: 2rem;
   border: 1px solid transparent;
-  background-color: hsla(100, 100%, 50%, 0.25);
-}
-
-.answerBtn:hover {
-  cursor: pointer;
-  background-color: hsla(100, 100%, 50%, 1);
-  box-shadow: 1px 1px 25px 5px hsla(100, 100%, 50%, 1);
-}
-
-.answerBtn:active {
-  transform: translateY(4px);
-  box-shadow: 0px 0px 10px 2px hsla(100, 100%, 50%, 1);
-}
-
-.startBtn {
-  padding: 0.5rem;
-  height: 3rem;
-  width: 6rem;
-  font-size: 1rem;
   border-radius: 0.25rem;
-  border: 1px solid transparent;
-  background-color: hsla(60, 100%, 50%, 0.25);
 }
 
-.startBtn:hover {
-  cursor: pointer;
-  background-color: hsla(60, 100%, 50%, 1);
-  box-shadow: 1px 1px 25px 5px hsla(60, 100%, 50%, 1);
+.guess-answer-container {
+  display: flex;
+  justify-content: center;
 }
 
-.startBtn:active {
-  transform: translateY(4px);
-  box-shadow: 0px 0px 10px 2px hsla(60, 100%, 50%, 1);
+.hidden {
+  display: none;
 }
 
 .problem-container {
@@ -80,4 +138,20 @@ input {
   border-radius: 0.25rem;
   background-color: hsla(0, 0%, 50%, 1);
   color: hsla(0, 0%, 0%, 1);
+}
+
+.score-container {
+  padding: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  background-color: hsla(0, 0%, 50%, 1);
+  color: hsla(0, 0%, 0%, 1);
+}
+
+.score-container p {
+  font-size: 2rem;
+}
+
+.spacer {
+  padding: 0.5rem;
 }
