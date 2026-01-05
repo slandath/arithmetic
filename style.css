@@ -1,3 +1,30 @@
+/* Color Guide
+
+Page background	= Light Lavender	
+Main container = Soft Cream	
+Problem container = Vibrant Purple	
+Guess container = White	
+Answer container = White
+Button (default) = Coral Orange
+Button (correct) = Mint Green
+Button (incorrect)	= Soft Red	
+Score container	= Sunny Yellow	
+Font = Charcoal
+*/
+
+:root {
+  --light-lavendar: hsla(262, 50%, 92%, 1);
+  --soft-cream: hsla(36, 100%, 97%, 1);
+  --vibrant-purple: hsla(262, 83%, 58%, 1); 
+  --coral-orange: hsla(0, 100%, 71%, 1);
+  --soft-red: hsla(354, 84%, 60%, 1);
+  --yellow: hsla(43, 96%, 56%, 1);
+  --dark-yellow: hsla(43, 56%, 56%, 1);
+  --mint-green: hsla(158, 64%, 52%, 1);
+  --white: hsla(0, 0%, 100%, 1);
+  --charcoal: hsla(0, 0%, 18%, 1);
+}
+
 html {
   box-sizing: border-box;
   margin: 0;
@@ -5,8 +32,8 @@ html {
 }
 
 body {
-  background-color: hsla(0, 0%, 10%, 1);
-  color: hsla(0, 0%, 50%, 1);
+  background-color: var(--light-lavendar);
+  color: var(--black);
   text-align: center;
 }
 
@@ -16,14 +43,14 @@ body {
   font-size: 1.25rem;
   border: 1px solid transparent;
   border-radius: 0.25rem;
-  background-color: white;
-  color: hsla(0, 0%, 0%, 1);
+  background-color: var(--purple);
+  color: var(--black);
 }
 
 .answer-text-container {
   margin-top: 0.5rem;
   margin-left: 0.5rem;
-  background-color: white;
+  background-color: var(--white);
   padding: 1rem;
   text-align: center;
   font-size: 2rem;
@@ -31,56 +58,52 @@ body {
   min-height: 2rem;
   border: 1px solid transparent;
   border-radius: 0.25rem;
+  box-shadow: 0px 4px 6px 0px rgba(0,0,0,.1);
 }
 
 .btn-check {
   margin-bottom: 0.5rem;
   padding: 0.5rem;
-  height: 3rem;
-  width: 13rem;
+  height: 6rem;
+  width: 6rem;
   font-size: 1rem;
-  color: white;
-  border-radius: 0.25rem;
-  border: 2px solid transparent;
-  background-color: hsla(200, 100%, 50%, 1);
-  box-shadow: 1px 1px 25px 5px hsla(200, 100%, 50%, 1);
+  color: var(--black);
+  border: 1px solid transparent;
+  border-radius: 3rem;
+  background-color: var(--coral-orange);
 }
 
 .btn-check:active {
   transform: translateY(4px);
-  box-shadow: 0px 0px 10px 2px hsla(200, 100%, 50%, 1);
 }
 
 .btn-check:hover {
   cursor: pointer;
-  background-color: hsla(200, 100%, 50%, 0.75);
-  box-shadow: 0px 0px 10px 2px hsla(200, 100%, 50%, 1);
+  background-color: hsla(0, 100%, 71%, .75);;
 }
 
 .btn-is-correct {
   margin-bottom: 0.5rem;
   padding: 0.5rem;
-  height: 3rem;
-  width: 13rem;
+  height: 6rem;
+  width: 6rem;
   font-size: 1rem;
   color: black;
-  border-radius: 0.25rem;
+  border-radius: 3rem;
   border: 1px solid transparent;
-  background-color: hsla(100, 100%, 50%, 1);
-  box-shadow: 0px 0px 10px 2px hsla(100, 100%, 50%, 1);
+  background-color: var(--mint-green);
 }
 
 .btn-is-wrong {
   margin-bottom: 0.5rem;
   padding: 0.5rem;
-  height: 3rem;
-  width: 13rem;
+  height: 6rem;
+  width: 6rem;
   font-size: 1rem;
   color: white;
-  border-radius: 0.25rem;
+  border-radius: 3rem;
   border: 1px solid transparent;
-  background-color: hsla(0, 100%, 50%, 1);
-  box-shadow: 0px 0px 10px 2px hsla(0, 100%, 50%, 1);
+  background-color: var(--soft-red);
 }
 
 .btn-start {
@@ -88,22 +111,18 @@ body {
   height: 3rem;
   width: 8rem;
   font-size: 1rem;
-  color: black;
+  color: var(--black);
   border-radius: 0.25rem;
   border: 1px solid transparent;
-  background-color: hsla(60, 100%, 50%, 1);
-  box-shadow: 1px 1px 25px 5px hsla(60, 100%, 50%, 1);
+  background-color: var(--coral-orange);
 }
 
 .btn-start:active {
   transform: translateY(4px);
-  box-shadow: 0px 0px 10px 2px hsla(60, 100%, 50%, 1);
 }
 
 .btn-start:hover {
   cursor: pointer;
-  background-color: hsla(60, 100%, 50%, 0.5);
-  box-shadow: 0px 0px 10px 2px hsla(60, 100%, 50%, 1);
 }
 
 .container {
@@ -112,8 +131,11 @@ body {
   padding: 1rem;
   margin: 0 auto;
   align-items: center;
-  background-color: hsla(0, 0%, 50%, 0.1);
+  background-color: var(--soft-cream);
+  border-radius: .25rem;
+  border: 1px solid transparent;
   max-width: 400px;
+  box-shadow: 0px 4px 6px 0px rgba(0,0,0,.1);
 }
 
 .guess-container input {
@@ -123,8 +145,10 @@ body {
   font-size: 1.5rem;
   max-width: 4rem;
   min-height: 2rem;
+  background-color: var(--white);
   border: 1px solid transparent;
   border-radius: 0.25rem;
+  box-shadow: 0px 4px 6px 0px rgba(0,0,0,.1);
 }
 
 .guess-answer-container {
@@ -141,16 +165,16 @@ body {
   font-size: 2rem;
   border: 1px solid transparent;
   border-radius: 0.25rem;
-  background-color: hsla(0, 0%, 50%, 1);
-  color: hsla(0, 0%, 0%, 1);
+  background-color: var(--vibrant-purple);
+  color: var(--white);
 }
 
 .score-container {
   padding: 1rem;
-  border: 1px solid transparent;
+  border: .15rem solid var(--dark-yellow);
   border-radius: 0.25rem;
-  background-color: hsla(0, 0%, 50%, 1);
-  color: hsla(0, 0%, 0%, 1);
+  background-color: var(--yellow);
+  color: var(--black);
 }
 
 .score-container p {

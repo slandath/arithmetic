@@ -26,7 +26,11 @@ document.querySelector('#app').innerHTML = `
       </div>
     </div>
     <div class="spacer"></div>
+    <div class="spacer"></div>
     <button id="answerBtn" class="btn-check">Check</button>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
     <div class="spacer"></div>
     <div id="scoreContainer" class="score-container">
       <label>Score</label>
