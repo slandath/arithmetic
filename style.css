@@ -1,186 +1,195 @@
-/* Color Guide
-
-Page background	= Light Lavender	
-Main container = Soft Cream	
-Problem container = Vibrant Purple	
-Guess container = White	
-Answer container = White
-Button (default) = Coral Orange
-Button (correct) = Mint Green
-Button (incorrect)	= Soft Red	
-Score container	= Sunny Yellow	
-Font = Charcoal
-*/
-
-:root {
-  --light-lavendar: hsla(262, 50%, 92%, 1);
-  --soft-cream: hsla(36, 100%, 97%, 1);
-  --vibrant-purple: hsla(262, 83%, 58%, 1); 
-  --coral-orange: hsla(0, 100%, 71%, 1);
-  --soft-red: hsla(354, 84%, 60%, 1);
-  --yellow: hsla(43, 96%, 56%, 1);
-  --dark-yellow: hsla(43, 56%, 56%, 1);
-  --mint-green: hsla(158, 64%, 52%, 1);
-  --white: hsla(0, 0%, 100%, 1);
-  --charcoal: hsla(0, 0%, 18%, 1);
-}
-
-html {
+* {
   box-sizing: border-box;
   margin: 0;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 0;
 }
 
 body {
-  background-color: var(--light-lavendar);
-  color: var(--black);
-  text-align: center;
-}
-
-.answer-container p {
-  max-width: 4rem;
-  margin: 0 auto;
-  font-size: 1.25rem;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
-  background-color: var(--purple);
-  color: var(--black);
-}
-
-.answer-text-container {
-  margin-top: 0.5rem;
-  margin-left: 0.5rem;
-  background-color: var(--white);
-  padding: 1rem;
-  text-align: center;
-  font-size: 2rem;
-  min-width: 4rem;
-  min-height: 2rem;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
-  box-shadow: 0px 4px 6px 0px rgba(0,0,0,.1);
-}
-
-.btn-check {
-  margin-bottom: 0.5rem;
-  padding: 0.5rem;
-  height: 6rem;
-  width: 6rem;
-  font-size: 1rem;
-  color: var(--black);
-  border: 1px solid transparent;
-  border-radius: 3rem;
-  background-color: var(--coral-orange);
-}
-
-.btn-check:active {
-  transform: translateY(4px);
-}
-
-.btn-check:hover {
-  cursor: pointer;
-  background-color: hsla(0, 100%, 71%, .75);;
-}
-
-.btn-is-correct {
-  margin-bottom: 0.5rem;
-  padding: 0.5rem;
-  height: 6rem;
-  width: 6rem;
-  font-size: 1rem;
-  color: black;
-  border-radius: 3rem;
-  border: 1px solid transparent;
-  background-color: var(--mint-green);
-}
-
-.btn-is-wrong {
-  margin-bottom: 0.5rem;
-  padding: 0.5rem;
-  height: 6rem;
-  width: 6rem;
-  font-size: 1rem;
-  color: white;
-  border-radius: 3rem;
-  border: 1px solid transparent;
-  background-color: var(--soft-red);
-}
-
-.btn-start {
-  padding: 0.5rem;
-  height: 3rem;
-  width: 8rem;
-  font-size: 1rem;
-  color: var(--black);
-  border-radius: 0.25rem;
-  border: 1px solid transparent;
-  background-color: var(--coral-orange);
-}
-
-.btn-start:active {
-  transform: translateY(4px);
-}
-
-.btn-start:hover {
-  cursor: pointer;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  margin: 0 auto;
-  align-items: center;
-  background-color: var(--soft-cream);
-  border-radius: .25rem;
-  border: 1px solid transparent;
-  max-width: 400px;
-  box-shadow: 0px 4px 6px 0px rgba(0,0,0,.1);
-}
-
-.guess-container input {
-  padding: 1rem;
-  margin: 0.5rem 0;
-  text-align: center;
-  font-size: 1.5rem;
-  max-width: 4rem;
-  min-height: 2rem;
-  background-color: var(--white);
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
-  box-shadow: 0px 4px 6px 0px rgba(0,0,0,.1);
-}
-
-.guess-answer-container {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-.hidden {
-  display: none;
+.game-container {
+  background: white;
+  border-radius: 24px;
+  padding: 32px 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.8rem;
+  color: #764ba2;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 24px;
+}
+
+.streak-container {
+  background: linear-gradient(135deg, #ff9a56 0%, #ff6b6b 100%);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 24px;
+  color: white;
+}
+
+.streak-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.streak-count {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.streak-emoji {
+  font-size: 1.5rem;
 }
 
 .problem-container {
-  padding: 1rem;
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  border-radius: 20px;
+  padding: 32px 16px;
+  margin-bottom: 24px;
+}
+
+.problem {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: 4px;
+}
+
+.input-container {
+  margin-bottom: 20px;
+}
+
+.answer-input {
+  width: 100%;
+  padding: 16px;
+  font-size: 1.5rem;
+  text-align: center;
+  border: 3px solid #999;
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.answer-input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+}
+
+.answer-input::placeholder {
+  color: #999;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 18px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.result-container {
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: 16px;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.result-container.correct {
+  background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
+  color: white;
+}
+
+.result-container.incorrect {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ffa07a 100%);
+  color: white;
+}
+
+.result-container.hidden {
+  background: #f5f5f5;
+  color: #999;
+  border: 1px solid #999;
+}
+
+.result-emoji {
   font-size: 2rem;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
-  background-color: var(--vibrant-purple);
-  color: var(--white);
+  margin-bottom: 8px;
 }
 
-.score-container {
-  padding: 1rem;
-  border: .15rem solid var(--dark-yellow);
-  border-radius: 0.25rem;
-  background-color: var(--yellow);
-  color: var(--black);
+.result-text {
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
-.score-container p {
-  font-size: 2rem;
+.correct-answer {
+  font-size: 0.95rem;
+  margin-top: 8px;
+  opacity: 0.9;
 }
 
-.spacer {
-  padding: 0.5rem;
+@media (max-width: 480px) {
+  .game-container {
+    padding: 24px 16px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .problem {
+    font-size: 2rem;
+  }
+
+  .streak-count {
+    font-size: 2.5rem;
+  }
+
+  .answer-input {
+    font-size: 1.25rem;
+    padding: 14px;
+  }
+
+  .submit-btn {
+    padding: 16px;
+    font-size: 1.1rem;
+  }
 }
