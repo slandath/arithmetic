@@ -1,18 +1,50 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://raw.githubusercontent.com/slandath/images/main/arithmetic/maths.png"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arithmetic Game</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/png"
-    href="https://raw.githubusercontent.com/slandath/images/main/arithmetic/maths.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arithmetic Game</title>
-  <link rel="stylesheet" href="/style.css">
-</head>
+  <body>
+    <div class="game-container">
+      <h1 class="title">Arithmetic Game!</h1>
+      <p class="subtitle">Solve the multiplication problem</p>
 
-<body>
-  <div id="app"></div>
-  <script type="module" src="/main.js"></script>
-</body>
+      <div class="streak-container">
+        <div class="streak-label">🔥 Current Streak</div>
+        <div class="streak-count" id="streak">0</div>
+        <div class="streak-emoji">⭐</div>
+      </div>
 
+      <div class="problem-container">
+        <div class="problem" id="problem">0 × 0 = ?</div>
+      </div>
+
+      <div class="input-container">
+        <input
+          type="number"
+          class="answer-input"
+          id="answer-input"
+          placeholder="Your answer"
+          inputmode="numeric"
+        />
+      </div>
+
+      <button class="submit-btn" id="submit-btn">Check Answer ✓</button>
+
+      <div class="result-container hidden" id="result-container">
+        <div class="result-emoji" id="result-emoji">🤔</div>
+        <div class="result-text" id="result-text">Submit your answer!</div>
+        <div class="correct-answer" id="correct-answer"></div>
+      </div>
+    </div>
+    <script type="module" src="src/main.js"></script>
+  </body>
 </html>
